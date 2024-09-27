@@ -2,6 +2,13 @@
   "identifier": "yuzhang.timestamp",
   "versions": [
     {
+      "version": "0.0.2",
+      "desc": "feat: 格式化调整",
+      "sha256": "775c52b126eb8e64ac395b0e11257df706e67df7fc96e8a3c3f7a00c71e193b6",
+      "url": "https://github.com/yuzhang9804/bob-plugin-timestamp/releases/download/v0.0.2/timestamp-0.0.2.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "0.0.1",
       "desc": "feat: init",
       "sha256": "1afd03d78f3accc917ff368bb6a48c5da7742faca0af4d173224a29e57eb9c01",
