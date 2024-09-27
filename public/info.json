@@ -1,0 +1,36 @@
+{
+  "identifier": "yuzhang.timestamp",
+  "version": "0.0.1",
+  "category": "translate",
+  "name": "bob-plugin-timestamp",
+  "summary": "时间戳转换",
+  "icon": "",
+  "author": "yuzhang9804@gmail.com",
+  "homepage": "https://github.com/yuzhang9804/bob-plugin-timestamp",
+  "appcast": "https://raw.githubusercontent.com/yuzhang9804/bob-plugin-timestamp/main/appcast.json",
+  "minBobVersion": "0.5.0",
+  "options": [
+    {
+      "identifier": "unit",
+      "type": "menu",
+      "title": "时间戳单位",
+      "defaultValue": "s",
+      "menuValues": [
+        {
+          "title": "毫秒",
+          "value": "ms"
+        },
+        {
+          "title": "秒",
+          "value": "s"
+        }
+      ]
+    },
+    {
+      "identifier": "format",
+      "type": "text",
+      "title": "时间格式",
+      "defaultValue": ""
+    }
+  ]
+}

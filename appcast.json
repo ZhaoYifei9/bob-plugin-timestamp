@@ -1,0 +1,19 @@
+{
+  "identifier": "yuzhang.timestamp",
+  "versions": [
+    {
+      "version": "0.0.1",
+      "desc": "fix: 调整",
+      "sha256": "23f59d8fbd333edfa2724009f8323e2b7b915491a7304d93dc463adfc48d6a4a",
+      "url": "https://github.com/yuzhang9804/bob-plugin-timestamp/releases/download/v0.0.1/timestamp-0.0.1.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
+      "version": "0.0.1",
+      "desc": "feat: update",
+      "sha256": "ffa45b2153ec658c7f363364fe6652aaad590aa6d8971d74f1cb11e7e8bac5b1",
+      "url": "https://github.com/yuzhang9804/bob-plugin-timestamp/releases/download/v0.0.1/bob-plugin-timestamp-0.0.1.bobplugin",
+      "minBobVersion": "0.5.0"
+    }
+  ]
+}
