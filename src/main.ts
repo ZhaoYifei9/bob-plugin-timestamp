@@ -7,7 +7,7 @@ export function supportLanguages(): string[] {
 
 export function translate(query: Bob.TranslateQuery, completion: Bob.Completion) {
   const { unit, format } = $option
-  const { text } = query
+  const text = query.text.trim()
 
   if (!dayjs(text).isValid()) {
     completion({
@@ -23,12 +23,11 @@ export function translate(query: Bob.TranslateQuery, completion: Bob.Completion)
   // 判断是否是时间戳
   const timestamp = Number(text)
   if (isNaN(timestamp)) {
-    const date = new Date(text)
     let result = ''
     if (unit === 's') {
-      result = dayjs(date).unix().toString()
+      result = dayjs(text).unix().toString()
     } else {
-      result = dayjs(date).valueOf().toString()
+      result = dayjs(text).valueOf().toString()
     }
     completion({
       result: {
@@ -38,7 +37,7 @@ export function translate(query: Bob.TranslateQuery, completion: Bob.Completion)
       },
     })
   } else {
-    const result = dayjs(text).format(format.trim())
+    const result = timestamp.toString().length === 10 ? dayjs.unix(timestamp).format(format.trim()) : dayjs(timestamp).format(format.trim())
     completion({
       result: {
         from: query.detectFrom,
