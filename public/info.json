@@ -1,6 +1,6 @@
 {
   "identifier": "yuzhang.timestamp",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "category": "translate",
   "name": "bob-plugin-timestamp",
   "summary": "时间戳转换",
@@ -30,7 +30,21 @@
       "identifier": "format",
       "type": "text",
       "title": "时间格式",
-      "defaultValue": ""
+      "defaultValue": "YYYY-MM-DD HH:mm:ss",
+      "textConfig": {
+        "type": "visible",
+        "placeholderText": "时间格式"
+      }
+    },
+    {
+      "identifier": "timezone",
+      "type": "text",
+      "title": "时区",
+      "defaultValue": "Asia/Shanghai",
+      "textConfig": {
+        "type": "visible",
+        "placeholderText": "时区"
+      }
     }
   ]
 }

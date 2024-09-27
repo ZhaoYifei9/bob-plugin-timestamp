@@ -1,13 +1,31 @@
 import { langs } from './lang'
 import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
+
+dayjs.extend(utc)
+dayjs.extend(timezone)
 
 export function supportLanguages(): string[] {
   return langs.map(([key]) => key)
 }
 
 export function translate(query: Bob.TranslateQuery, completion: Bob.Completion) {
-  const { unit, format } = $option
+  const { unit, format, timezone} = $option
   const text = query.text.trim()
+
+  // 获取当前时间戳
+  if (text === 'now') {
+    const currentTimestamp = unit === 's' ? dayjs().unix().toString() : dayjs().valueOf().toString();
+    completion({
+      result: {
+        from: query.detectFrom,
+        to: query.detectTo,
+        toParagraphs: [currentTimestamp],
+      },
+    });
+    return;
+  }
 
   if (!dayjs(text).isValid()) {
     completion({
@@ -37,7 +55,7 @@ export function translate(query: Bob.TranslateQuery, completion: Bob.Completion)
       },
     })
   } else {
-    const result = timestamp.toString().length === 10 ? dayjs.unix(timestamp).format(format.trim()) : dayjs(timestamp).format(format.trim())
+    const result = timestamp.toString().length === 10 ? dayjs.unix(timestamp).tz(timezone.trim()).format(format.trim()) : dayjs(timestamp).tz(timezone.trim()).format(format.trim())
     completion({
       result: {
         from: query.detectFrom,
